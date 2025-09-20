@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+// import { Analytics } from '@vercel/analytics/react';
+// import { SpeedInsights } from '@vercel/speed-insights/next';
 import localFont from "next/font/local";
 import { DM_Sans } from "next/font/google";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/Footer";
-import ModalSearch from "./components/search/ModalSearch";
-import ModalDocs from "./components/docs/ModalDocs";
+// import Navbar from "@/components/navbar/Navbar";
+// import Footer from "@/components/Footer";
+// import ModalSearch from "./components/search/ModalSearch";
+// import ModalDocs from "./components/docs/ModalDocs";
 import "./globals.css";
 import '@vidstack/react/player/styles/default/theme.css';
 import '@vidstack/react/player/styles/default/layouts/video.css';
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  // children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -34,17 +34,14 @@ export default function RootLayout({
       <body
         className={`${dmSans.className} ${magnatBold.variable} font-medium antialiased `}
       >
-        <Navbar />
-        <div className="min-h-screen">
-          <ModalDocs />
-          <div className="container mx-auto relative">
-            {children}
-          </div>
-          <Analytics />
-          <SpeedInsights />
+        <div className={`text-white text-xl text-center flex flex-col items-center justify-center min-h-screen font-bold ${magnatBold.className} antialiased`}>
+          <p>
+            Under Maintenance
+          </p>
+          <p className="text-base">
+            (i&apos;m tired people ddos me, so i pause the project)
+          </p>
         </div>
-        <Footer />
-        <ModalSearch />
       </body>
     </html >
   );
